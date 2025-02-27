@@ -1,15 +1,29 @@
 package com.codefrombasics.java_spring_mongo.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "employee")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Employee {
     @Id
     public String id;
     public String firstName;
     public String lastName;
     public String department;
+    public List<Address> address;
+    public Integer age;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
     public Employee() {
     }

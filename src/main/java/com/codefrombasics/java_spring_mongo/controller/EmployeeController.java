@@ -32,4 +32,17 @@ public class EmployeeController {
     public List<Employee> getAllEmployees(){
         return employeeService.getEmployees();
     }
+    @GetMapping("/emp")
+    public List<Employee> getEmployeeByName(@RequestParam("name") String name){
+        return employeeService.getEmployeeFirstNameStartsWith(name);
+
+    }
+    @GetMapping("/age")
+    public List<Employee> getEmployeeByAgeBetween(@RequestParam("min") Integer min,
+                                                  @RequestParam("max") Integer max){
+        return employeeService.getEmployeeByAgeBetween(min,max);
+
+    }
+
+
 }

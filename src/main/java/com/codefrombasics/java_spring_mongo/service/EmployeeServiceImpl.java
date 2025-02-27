@@ -27,4 +27,16 @@ public class EmployeeServiceImpl implements  EmployeeService{
     public List<Employee> getEmployees() {
         return employeeRepository.findAll();
     }
+
+    @Override
+    public List<Employee> getEmployeeFirstNameStartsWith(String name) {
+        return employeeRepository.findByFirstNameStartsWith(name);
+    }
+
+    @Override
+    public List<Employee> getEmployeeByAgeBetween(Integer min, Integer max) {
+        return employeeRepository.findEmployeeByAgeBetween(min,max);
+    }
+
+
 }
