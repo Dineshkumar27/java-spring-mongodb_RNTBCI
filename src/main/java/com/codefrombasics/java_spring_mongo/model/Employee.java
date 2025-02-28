@@ -17,6 +17,7 @@ public class Employee {
     public List<Address> address;
     public Integer age;
 
+
     public Integer getAge() {
         return age;
     }
@@ -35,6 +36,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", department='" + department + '\'' +
+
                 '}';
     }
 
