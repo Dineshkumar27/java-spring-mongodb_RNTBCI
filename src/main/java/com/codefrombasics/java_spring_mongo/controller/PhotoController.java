@@ -34,7 +34,8 @@ public class PhotoController {
                 = (Resource) new ByteArrayResource(photo.getPhoto().getData());
 
         return  ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + photo.getTitle() + "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=\"" + photo.getTitle() + "\"")
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(resource);
     }

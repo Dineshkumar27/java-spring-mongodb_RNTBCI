@@ -23,6 +23,7 @@ public class UploadPhotoServiceImpl implements UploadPhotoService{
         Photo photo
                 = new Photo();
         photo.setTitle(originalFilename);
+        //converting the image into Binary format
         photo.setPhoto(new Binary(BsonBinarySubType.BINARY,image.getBytes()));
         return photoRepository.save(photo).getId();
     }
